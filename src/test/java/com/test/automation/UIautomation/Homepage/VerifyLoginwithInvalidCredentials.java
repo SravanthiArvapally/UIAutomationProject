@@ -1,47 +1,37 @@
 package com.test.automation.UIautomation.Homepage;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.apache.log4j.Logger;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.test.automation.UIautomation.homePageActions.Homepage;
+import com.test.automation.UIautomation.testBase.TestBase;
 
-public class VerifyLoginwithInvalidCredentials {
+public class VerifyLoginwithInvalidCredentials extends TestBase{
 	
-	WebDriver driver;
-	
-	Homepage homepage;
-	
-	@BeforeTest
-	public void setUp()
+	public static final Logger log=Logger.getLogger(VerifyLoginwithInvalidCredentials.class.getName());
+	@BeforeClass
+	public void setUp()throws Exception
 	{
-		//For Windows
-		System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"/Driver/geckodriver.exe");
-		//For Mac
-		//System.setProperty("webdriver.firefox,marionette", System.getProperty("user.dir")+"/Driver/geckodriver");
-		String directory=System.getProperty("user.dir");
-		driver=new FirefoxDriver();
-		driver.get("http://automationpractice.com/index.php");
-		
+		init();
 	}
 	
 	@Test
-	public void invalidLogin() {
-		homepage=new Homepage(driver);
+	public void LoginwithInvalidCredentials() {
+		log.info("===Starting LoginwithInvalidCredentials Test===");
+		Homepage homepage=new Homepage(driver);
+		homepage.clickOnSignIN();
 		homepage.logIntoApplication("test@gmail.com", "password123");
 		Assert.assertEquals(homepage.getInvalidLoginText(), "Authentication failed.");
+		log.info("===Finished LoginwithInvalidCredentials Test===");
 	}
 	
-	@AfterTest
+	@AfterClass
 	public void tear()
 	{
-		driver.close();
+		driver.quit();
 	}
 
 }
