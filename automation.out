@@ -10,3 +10,17 @@
 2017-08-28 20:33:59 INFO  Homepage:41 - Clicked on Sign In and object is:[[ChromeDriver: chrome on XP (988db70555e457ad8291afaa62b68af6)] -> xpath: //div[@class='header_user_info']/a[@class='login']]
 2017-08-28 20:43:43 INFO  Homepage:41 - Clicked on Sign In and object is:[[ChromeDriver: chrome on XP (2f87a782662983bb13e4908c5a4a63bd)] -> xpath: //div[@class='header_user_info']/a[@class='login']]
 2017-08-28 20:45:59 INFO  Homepage:41 - Clicked on Sign In and object is:[[ChromeDriver: chrome on XP (0663db2463a5dc8cec4582e2095262f4)] -> xpath: //div[@class='header_user_info']/a[@class='login']]
+2017-08-30 16:31:09 INFO  VerifyLoginwithInvalidCredentials:23 - ===Starting LoginwithInvalidCredentials Test===
+2017-08-30 16:31:12 INFO  Homepage:76 - Clicked on Sign In and object is:[[ChromeDriver: chrome on WIN8 (75565788faade7ed73f05c3fe8c7273e)] -> xpath: //div[@class='header_user_info']/a[@class='login']]
+2017-08-30 16:31:12 INFO  Homepage:84 - Entered email address is:test@gmail.comand object is [[ChromeDriver: chrome on WIN8 (75565788faade7ed73f05c3fe8c7273e)] -> xpath: //input[@id='email']]
+2017-08-30 16:31:12 INFO  Homepage:87 - Entered password is:password123and object is [[ChromeDriver: chrome on WIN8 (75565788faade7ed73f05c3fe8c7273e)] -> xpath: //input[@id='passwd']]
+2017-08-30 16:31:12 INFO  Homepage:90 - Clicked on submit button and the object is:[[ChromeDriver: chrome on WIN8 (75565788faade7ed73f05c3fe8c7273e)] -> xpath: //button[@id='SubmitLogin']/span/i]
+2017-08-30 16:31:13 INFO  Homepage:96 - Error message isAuthentication failed.
+2017-08-30 16:31:13 INFO  VerifyLoginwithInvalidCredentials:28 - ===Finished LoginwithInvalidCredentials Test===
+2017-08-30 18:20:20 INFO  VerifyLoginwithInvalidCredentials:23 - ===Starting LoginwithInvalidCredentials Test===
+2017-08-30 18:20:22 INFO  Homepage:76 - Clicked on Sign In and object is:[[ChromeDriver: chrome on WIN8 (55f1253b9816cb5ee97788c194928b84)] -> xpath: //div[@class='header_user_info']/a[@class='login']]
+2017-08-30 18:20:22 INFO  Homepage:84 - Entered email address is:test@gmail.comand object is [[ChromeDriver: chrome on WIN8 (55f1253b9816cb5ee97788c194928b84)] -> xpath: //input[@id='email']]
+2017-08-30 18:20:22 INFO  Homepage:87 - Entered password is:password123and object is [[ChromeDriver: chrome on WIN8 (55f1253b9816cb5ee97788c194928b84)] -> xpath: //input[@id='passwd']]
+2017-08-30 18:20:23 INFO  Homepage:90 - Clicked on submit button and the object is:[[ChromeDriver: chrome on WIN8 (55f1253b9816cb5ee97788c194928b84)] -> xpath: //button[@id='SubmitLogin']/span/i]
+2017-08-30 18:20:24 INFO  Homepage:96 - Error message isAuthentication failed.
+2017-08-30 18:20:24 INFO  VerifyLoginwithInvalidCredentials:28 - ===Finished LoginwithInvalidCredentials Test===
