@@ -1,0 +1,5 @@
+com\test\automation\UIautomation\registration\Login.class
+com\test\automation\UIautomation\testBase\TestBase.class
+com\test\automaton\UIautomation\screenshot\Screenshots.class
+com\test\automation\UIautomation\Excel\MyfirstExcelTest.class
+com\test\automation\UIautomation\homePageActions\Homepage.class

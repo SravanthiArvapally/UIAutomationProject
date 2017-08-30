@@ -99,12 +99,12 @@ public class Homepage {
 	
 	public void registerUser()
 	{
-		driver.findElement(By.xpath("//input[@id='email_create']")).sendKeys("12334h6345@gmail.com");
-		driver.findElement(By.xpath("//button[@id='SubmitCreate']")).click();
-		driver.findElement(By.xpath("(//div[@class='radio-inline']/label/div/span)[2]")).click();
-		driver.findElement(By.xpath("//input[@id='customer_firstname']")).sendKeys("sdgasfhadfhasd");
-		driver.findElement(By.xpath("//input[@id='customer_lastname']")).sendKeys("dghsdywerasf");
-		driver.findElement(By.xpath("//input[@id='passwd']")).sendKeys("password1");
+		email_SignUP.sendKeys("12334h6345@gmail.com");
+		createAnAccount_Button.click();
+		mrs_RadioButton.click();
+		this.firstName.sendKeys("sdgasfhadfhasd");
+		this.lastName.sendKeys("dghsdywerasf");
+		loginPassword.sendKeys("password1");
 		
 		/*Select days=new Select(driver.findElement(By.id("days")));
 		days.selectByVisibleText("13  ");
@@ -115,14 +115,14 @@ public class Homepage {
 		Select years=new Select(driver.findElement(By.id("years")));
 		years.selectByVisibleText("1998  ");*/
 		
-		driver.findElement(By.xpath("//input[@id='address1']")).sendKeys("Mumbai");
-		driver.findElement(By.xpath("//input[@id='city']")).sendKeys("city is also Mumbai");
+		address.sendKeys("Mumbai");
+		city.sendKeys("city is also Mumbai");
 		
 		Select state=new Select(driver.findElement(By.id("id_state")));
 		state.selectByVisibleText("Alaska");
 		
-		driver.findElement(By.id("postcode")).sendKeys("35346");
-		driver.findElement(By.id("phone_mobile")).sendKeys("364575678456");
+		postcode.sendKeys("35346");
+		mobile_Phone.sendKeys("364575678456");
 		driver.findElement(By.id("alias")).sendKeys("India Mumbai");
 		driver.findElement(By.id("submitAccount")).click();
 		

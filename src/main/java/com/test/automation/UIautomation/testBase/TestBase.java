@@ -25,18 +25,22 @@ public class TestBase {
 	public void selectBrowser(String browser)
 	{
 		
-		if(browser.equalsIgnoreCase("chrome"));
+		if(browser.equalsIgnoreCase("chrome"))
 		{
-				//For Windows
-				//System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"/Driver/geckodriver.exe");
+				
 			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/Driver/chromedriver.exe");
 			log.info("Creating object of"+ browser);//To print which browser the object is getting created
 	
-				//For Mac
-				//System.setProperty("webdriver.firefox,marionette", System.getProperty("user.dir")+"/Driver/geckodriver");
-				driver=new ChromeDriver();
+			driver=new ChromeDriver();
 				
 			}
+		else if(browser.equalsIgnoreCase("firefox"))
+		{
+			//For Windows
+			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")+"/Driver/geckodriver.exe");
+			//For Mac
+			//System.setProperty("webdriver.firefox,marionette", System.getProperty("user.dir")+"/Driver/geckodriver");
+		}
 	}
 			
 	public void getUrl()
