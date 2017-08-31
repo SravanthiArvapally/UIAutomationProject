@@ -1,19 +1,19 @@
 package com.test.automation.UIautomation.excelReader;
 
 import java.io.FileInputStream;
-
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.apache.poi.xssf.usermodel.helpers.XSSFRowShifter;
 
 public class Excel_Reader {
 
 	public String path; 
 	public FileInputStream fis;
 	public XSSFWorkbook workbook;
+	
+
 	//C:\Users\saikrishna\git\UIAutomationProject\
 	
 	//src\main\java\com\test\automation\UIautomation\data\Testdata.xlsx
@@ -38,54 +38,54 @@ public class Excel_Reader {
 	
 	//This method will return data for each record in excel sheet
 	
-	public String[][] getDataFromSheet(String sheetName)
-	{
+	//public String[][] getDataFromSheet(String sheetName, String excelName){
+	@SuppressWarnings("deprecation")
+	public String[][] getDataFromSheet(String sheetName, String excelName){
 		String dataSets[][]=null;
-		try{
+		
+		try
+		{
 		//Get sheet from excel workbook
 		XSSFSheet sheet=workbook.getSheet(sheetName);
+				
+	int totalRows=sheet.getLastRowNum()+1; //row number starts from 0, so getLastRowNum returns 4. including header there are 
+	//5 rows. so adding +1
 		
-		//Get total number of rows in the sheet
-		int totalRows=sheet.getLastRowNum()+1;//since row number starts from 0,1,2,..
+	int totalCols=sheet.getRow(0).getLastCellNum(); //Returns 3.. This method is counting column number 1,2,3
+	
+		dataSets=new String[totalRows-1][totalCols];
 		
-		//Get total number of columns in the sheet
-		int totalcols=sheet.getRow(0).getLastCellNum();
-		
-		//Initializing one string array to store the data
-		
-		dataSets=new String[totalRows-1][totalcols];
-		
-		for(int i=1;i<totalRows;i++) //i=1 because first row containing headings. Data starts from second row of excel sheet
+		for(int i=1;i<totalRows;i++)
 		{
 			XSSFRow row=sheet.getRow(i);
-			
-			for(int j=0;j<totalcols;j++) //j=0 because col starts from 0(means from first column in excel sheet)
+			for(int j=0;j<totalCols;j++)
 			{
 				XSSFCell cell=row.getCell(j);
-				
 				if(cell.getCellType()==Cell.CELL_TYPE_STRING)
 					dataSets[i-1][j]=cell.getStringCellValue();
 				else if(cell.getCellType()==Cell.CELL_TYPE_NUMERIC)
 					dataSets[i-1][j]=String.valueOf(cell.getNumericCellValue());
 				else if(cell.getCellType()==Cell.CELL_TYPE_BOOLEAN)
-					dataSets[1-1][j]=String.valueOf(cell.getBooleanCellValue());
+					dataSets[i-1][j]=String.valueOf(cell.getBooleanCellValue());
+				System.out.println(dataSets[i-1][j]);
 			}
+		}		
 		}
-		return dataSets;
-		}
-		catch(Exception e){
-			e.printStackTrace();
 		
-	}
-		return null;	
-				
-				
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+			
+		return dataSets;			
 }	
 		
 	//Method to read only one cell data based on the input
 		
+		@SuppressWarnings("deprecation")
 		public String getCellData(String SheetName, int rowNum, String colName){
 			int colNum=0;
+			
 			try{
 			XSSFSheet sheet=workbook.getSheet(SheetName);
 			
@@ -105,24 +105,14 @@ public class Excel_Reader {
 			if(cell.getCellType()==Cell.CELL_TYPE_STRING)
 				return cell.getStringCellValue();
 			else if(cell.getCellType()==Cell.CELL_TYPE_NUMERIC)
-				return String.valueOf(cell.getBooleanCellValue());
-			
-			
+				return String.valueOf(cell.getBooleanCellValue());			
 			
 			}
 			catch(Exception e)
 			{
 				e.printStackTrace();
 		}
-			return null
-					;
-		
-		
-		
-		
-		
-		
-		
+			return null;	
 		
 	}
 }

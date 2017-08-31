@@ -7,6 +7,8 @@ import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import com.test.automation.UIautomation.excelReader.Excel_Reader;
+
 public class TestBase {
 	
 	public static final Logger log=Logger.getLogger(TestBase.class.getName());//this log will give name of the class
@@ -14,6 +16,7 @@ public class TestBase {
 	public WebDriver driver;
 	public String url="http://automationpractice.com/index.php";
 	public String browser="chrome";
+	Excel_Reader excel;
 	
 	public void init() {
 		selectBrowser(browser);
@@ -50,6 +53,26 @@ public class TestBase {
 		driver.manage().window().maximize();
 		System.out.println("window maximized");
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+	}
+	
+	public String[][] getExcelData(String excelName, String sheetName)
+	{
+		String path=System.getProperty("user.dir")+"\\src\\main\\java\\com\\test\\automation\\UIautomation\\data\\"+excelName;
+		//C:\Users\srarvapa\git\UIAutomationProject\src\main\java\com\test\automation\UIautomation\data\Testdata.xlsx
+		excel=new Excel_Reader(path);
+		//String data[][]=excel.getDataFromSheet(sheetName,excelName);
+		String[][] data=excel.getDataFromSheet(sheetName,excelName);
+		return data;
+	}
+	
+	public String getExcelData(String excelName, String sheetName, int rowNum, String colName)
+	{
+		String path=System.getProperty("user.dir")+"\\src\\main\\java\\com\\test\\automation\\UIautomation\\data\\"+excelName;
+		excel=new Excel_Reader(path);
+		String cellData=excel.getCellData(sheetName, rowNum, colName);
+		System.out.println("Cell data is"+ cellData);
+		return cellData;
+		
 		
 	}
 	

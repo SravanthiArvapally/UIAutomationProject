@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Regression Suite" duration-ms="16180" started-at="2017-08-30T12:50:08Z" finished-at="2017-08-30T12:50:25Z">
+  <suite name="Default suite" duration-ms="628" started-at="2017-08-31T15:03:59Z" finished-at="2017-08-31T15:04:00Z">
     <groups>
     </groups>
-    <test name="VerifyLoginwithInvalidCredentials" duration-ms="16180" started-at="2017-08-30T12:50:08Z" finished-at="2017-08-30T12:50:25Z">
-      <class name="com.test.automation.UIautomation.Homepage.VerifyLoginwithInvalidCredentials">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.test.automation.UIautomation.Homepage.VerifyLoginwithInvalidCredentials@6fd02e5]" name="setUp" is-config="true" duration-ms="11696" started-at="2017-08-30T18:20:08Z" finished-at="2017-08-30T18:20:20Z">
+    <test name="Default test" duration-ms="628" started-at="2017-08-31T15:03:59Z" finished-at="2017-08-31T15:04:00Z">
+      <class name="com.test.automation.UIautomation.excelActions.DisplayexcelData">
+        <test-method status="PASS" signature="setUp1()[pri:0, instance:com.test.automation.UIautomation.excelActions.DisplayexcelData@6fd02e5]" name="setUp1" is-config="true" duration-ms="9" started-at="2017-08-31T20:33:59Z" finished-at="2017-08-31T20:33:59Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="LoginwithInvalidCredentials()[pri:0, instance:com.test.automation.UIautomation.Homepage.VerifyLoginwithInvalidCredentials@6fd02e5]" name="LoginwithInvalidCredentials" duration-ms="3678" started-at="2017-08-30T18:20:20Z" finished-at="2017-08-30T18:20:24Z">
+        </test-method> <!-- setUp1 -->
+        <test-method status="PASS" signature="DisplayexcelData()[pri:0, instance:com.test.automation.UIautomation.excelActions.DisplayexcelData@6fd02e5]" name="DisplayexcelData" duration-ms="599" started-at="2017-08-31T20:33:59Z" finished-at="2017-08-31T20:34:00Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LoginwithInvalidCredentials -->
-        <test-method status="PASS" signature="tear()[pri:0, instance:com.test.automation.UIautomation.Homepage.VerifyLoginwithInvalidCredentials@6fd02e5]" name="tear" is-config="true" duration-ms="777" started-at="2017-08-30T18:20:24Z" finished-at="2017-08-30T18:20:25Z">
+        </test-method> <!-- DisplayexcelData -->
+        <test-method status="PASS" signature="tear1()[pri:0, instance:com.test.automation.UIautomation.excelActions.DisplayexcelData@6fd02e5]" name="tear1" is-config="true" duration-ms="0" started-at="2017-08-31T20:34:00Z" finished-at="2017-08-31T20:34:00Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tear -->
-      </class> <!-- com.test.automation.UIautomation.Homepage.VerifyLoginwithInvalidCredentials -->
-    </test> <!-- VerifyLoginwithInvalidCredentials -->
-  </suite> <!-- Regression Suite -->
+        </test-method> <!-- tear1 -->
+      </class> <!-- com.test.automation.UIautomation.excelActions.DisplayexcelData -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
