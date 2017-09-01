@@ -50,9 +50,11 @@ public class Excel_Reader {
 				
 	int totalRows=sheet.getLastRowNum()+1; //row number starts from 0, so getLastRowNum returns 4. including header there are 
 	//5 rows. so adding +1
+	System.out.println("Total number of row:"+totalRows);
 		
 	int totalCols=sheet.getRow(0).getLastCellNum(); //Returns 3.. This method is counting column number 1,2,3
 	
+	System.out.println("Total number of columns"+totalCols);
 		dataSets=new String[totalRows-1][totalCols];
 		
 		for(int i=1;i<totalRows;i++)

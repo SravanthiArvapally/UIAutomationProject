@@ -30,7 +30,6 @@ public class VerifyloginWithExistingUser extends TestBase{
 		System.out.println("email address is "+ emailaddress + "password is " + password);
 		homepage.logIntoApplication(emailaddress, password);
 		homepage.verifySignoutLink();
-		
 	}
 	
 	@AfterClass

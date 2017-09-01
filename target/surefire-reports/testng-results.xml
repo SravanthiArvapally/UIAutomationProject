@@ -2,10 +2,10 @@
 <testng-results skipped="0" failed="0" ignored="0" total="0" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="com.test.automation.UIautomation.FirstTest" duration-ms="5" started-at="2017-08-31T06:48:43Z" finished-at="2017-08-31T06:48:43Z">
+  <suite name="com.test.automation.UIautomation.FirstTest" duration-ms="0" started-at="2017-09-01T11:35:54Z" finished-at="2017-09-01T11:35:54Z">
     <groups>
     </groups>
-    <test name="Command line test" duration-ms="5" started-at="2017-08-31T06:48:43Z" finished-at="2017-08-31T06:48:43Z">
+    <test name="Command line test" duration-ms="0" started-at="2017-09-01T11:35:54Z" finished-at="2017-09-01T11:35:54Z">
     </test> <!-- Command line test -->
   </suite> <!-- com.test.automation.UIautomation.FirstTest -->
 </testng-results>

@@ -1,3 +1,3 @@
+com\test\automation\UIautomation\FirstTest.class
 com\test\automation\UIautomation\Homepage\VerifySignUpFunctionality.class
 com\test\automation\UIautomation\Homepage\VerifyLoginwithInvalidCredentials.class
-com\test\automation\UIautomation\FirstTest.class
