@@ -19,7 +19,7 @@ public class VerifyLoginwithInvalidCredentials extends TestBase{
 	}
 	
 	@Test
-	public void LoginwithInvalidCredentials() {
+	public void loginwithInvalidCredentials() {
 		log.info("===Starting LoginwithInvalidCredentials Test===");
 		Homepage homepage=new Homepage(driver);
 		homepage.clickOnSignIN();

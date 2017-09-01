@@ -10,7 +10,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class Homepage {
+import com.test.automation.UIautomation.testBase.TestBase;
+
+public class Homepage extends TestBase{
 	
 	public static final Logger log=Logger.getLogger(Homepage.class.getName());
 	
@@ -63,6 +65,9 @@ public class Homepage {
 	
 	@FindBy(id="submitAccount")
 	WebElement submit_SignUP;
+	
+	@FindBy(css="nav div:nth-child(2)>a[class='logout']")
+	WebElement sign_Out;
 	
 	public Homepage(WebDriver driver)
 	{
@@ -126,6 +131,23 @@ public class Homepage {
 		driver.findElement(By.id("alias")).sendKeys("India Mumbai");
 		driver.findElement(By.id("submitAccount")).click();
 		
+	}
+	
+	public boolean verifySignoutLink()
+	{
+		try {
+		waitForElement(sign_Out,300);
+		sign_Out.isDisplayed();
+		return true;
+	}
+		catch(Exception e) {
+			return false;
+		}
+	}
+	
+	public void clickOnsignOut()
+	{
+		sign_Out.click();
 	}
 	
 	}

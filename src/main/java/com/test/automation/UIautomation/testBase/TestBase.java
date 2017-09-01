@@ -5,7 +5,10 @@ import java.util.concurrent.TimeUnit;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.test.automation.UIautomation.excelReader.Excel_Reader;
 
@@ -17,6 +20,7 @@ public class TestBase {
 	public String url="http://automationpractice.com/index.php";
 	public String browser="chrome";
 	Excel_Reader excel;
+	WebDriverWait wait;
 	
 	public void init() {
 		selectBrowser(browser);
@@ -72,8 +76,13 @@ public class TestBase {
 		String cellData=excel.getCellData(sheetName, rowNum, colName);
 		System.out.println("Cell data is"+ cellData);
 		return cellData;
-		
-		
+	
+	}
+	
+	public void waitForElement(WebElement element,int timeOutInSeconds)
+	{
+		wait=new WebDriverWait(driver, timeOutInSeconds);
+		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 	
 	

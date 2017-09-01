@@ -42,7 +42,7 @@ public class Excel_Reader {
 	@SuppressWarnings("deprecation")
 	public String[][] getDataFromSheet(String sheetName, String excelName){
 		String dataSets[][]=null;
-		
+		System.out.println("entered into method");
 		try
 		{
 		//Get sheet from excel workbook
@@ -60,6 +60,7 @@ public class Excel_Reader {
 			XSSFRow row=sheet.getRow(i);
 			for(int j=0;j<totalCols;j++)
 			{
+				System.out.println("Row and col values are"+ i+j);
 				XSSFCell cell=row.getCell(j);
 				if(cell.getCellType()==Cell.CELL_TYPE_STRING)
 					dataSets[i-1][j]=cell.getStringCellValue();
