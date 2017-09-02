@@ -1,3 +1,13 @@
+/**
+ * Test Steps:
+ * Launches the url.
+ * Login with existing user and performs sign out by clicking on 'Sign Out' link
+ * Repeat the scenario by reading different data sets from excel sheet for existing user  
+ * 
+ */
+
+
+
 package com.test.automation.UIautomation.Homepage;
 
 import org.testng.annotations.AfterClass;
@@ -23,13 +33,14 @@ public class VerifyloginWithExistingUser extends TestBase{
     }
 	
 	@Test(dataProvider="login")
-	public void loginWithExistingUser(String emailaddress, String password)
+	public void loginWithExistingUser(String emailaddress, String password)// provider no. of parameters= no. of cols in excel
 	{
 		Homepage homepage=new Homepage(driver);
 		homepage.clickOnSignIN();
 		System.out.println("email address is "+ emailaddress + "password is " + password);
 		homepage.logIntoApplication(emailaddress, password);
 		homepage.verifySignoutLink();
+		homepage.clickOnsignOut();
 	}
 	
 	@AfterClass

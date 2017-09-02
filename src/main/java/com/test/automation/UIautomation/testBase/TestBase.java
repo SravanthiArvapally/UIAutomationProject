@@ -1,14 +1,22 @@
 package com.test.automation.UIautomation.testBase;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
 
 import com.test.automation.UIautomation.excelReader.Excel_Reader;
 
@@ -85,6 +93,34 @@ public class TestBase {
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 	
-	
+	public void getScreenshot(String name)
+	{
+		Calendar calender=Calendar.getInstance();
+		SimpleDateFormat sid=new SimpleDateFormat("dd_mm_yyyy_hh_mm_ss");
+		
+		File srcfile=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		
+		try
+		{
+		String reportDirectory=System.getProperty("user.dir")+"src/main/java/com/test/automation/UIautomation/screenshot/";
+			
+		File destfile=new File((String)reportDirectory+ name + "-"+ sid.format(calender.getTime())+".png");
+		FileUtils.copyFile(srcfile, destfile);
+			
+		//This will help  us to link screenshot in testNG report
+		
+		Reporter.log("<a href= '" + destfile.getAbsolutePath() + "'> <img src='" +destfile.getAbsolutePath()+"'height='100' width='100'/></a>");
+		
+		//here to convert destfile.getabsolute path to string we have to mention ' followed by " and " followed by '
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
+
 
 }
