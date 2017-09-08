@@ -30,7 +30,7 @@ public class VerifySignUpFunctionality extends TestBase{
 	@AfterClass
 	public void tear()
 	{
-		driver.quit();
+		closeBrowser();
 	}
 
 

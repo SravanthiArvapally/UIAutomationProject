@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.test.automation.UIautomation.Homepage.VerifyloginWithExistingUser">
+      <class name="com.test.automation.UIautomation.productPageTests.VerifyAddtoCartOnProductPage">
         <methods>
-          <include name="tear"/>
-          <include name="loginWithExistingUser"/>
+          <include name="verifyAddtoCart"/>
           <include name="setUp"/>
+          <include name="tear"/>
         </methods>
-      </class> <!-- com.test.automation.UIautomation.Homepage.VerifyloginWithExistingUser -->
+      </class> <!-- com.test.automation.UIautomation.productPageTests.VerifyAddtoCartOnProductPage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

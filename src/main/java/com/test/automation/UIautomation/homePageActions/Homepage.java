@@ -9,8 +9,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-
 import com.test.automation.UIautomation.testBase.TestBase;
+
+import junit.framework.Assert;
 
 public class Homepage extends TestBase{
 	
@@ -68,6 +69,26 @@ public class Homepage extends TestBase{
 	
 	@FindBy(css="nav div:nth-child(2)>a[class='logout']")
 	WebElement sign_Out;
+	
+	@FindBy(xpath="//div[@id='center_column']/h1/span[1]")
+	WebElement categoryPageHeader;
+	
+	//Nav Menu options
+	public final String womenText="Women";
+	public final String dressesText="Dresses";
+	public final String tshirtsText="T-shirts";
+	
+	//Sub Nav Menu1 options	
+	public final String tops="Tops";
+	public final String dresses="Dresses";
+	
+	//Sub Nav Menu2 options
+	
+	public final String tshirts="T-shirts";
+	public final String blouses="Blouses";
+	public final String casualDresses ="Casual Dresses";
+	public final String eveningDresses="Evening Dresses";
+	public final String summerDresses="Summer Dresses";	
 	
 	public Homepage(WebDriver driver)
 	{
@@ -150,4 +171,61 @@ public class Homepage extends TestBase{
 		sign_Out.click();
 	}
 	
+	//Methods for Navigation Menus
+	
+	public void navMenusOnHomePage(String navMenuOption)
+	{
+		try
+		{
+		WebElement element=driver.findElement(By.xpath("//div[@id='block_top_menu']/ul/li/a[@title='"+navMenuOption+"']"));
+		if(element.isDisplayed())
+			{
+		element.click();	
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public void subMenuNavforWomen(String navMenuOption, String subMenuOption1, String subMenuOption2) throws InterruptedException
+	{
+		WebElement element=driver.findElement(By.xpath("//div[@id='block_top_menu']/ul/li/a[@title='"+navMenuOption+"']"));
+		moveToElement(driver, element);
+		Thread.sleep(500);
+		
+		WebElement subMenu=driver.findElement(By.xpath("//div[@id='block_top_menu']/ul/li/a[@title='"+navMenuOption+"']/following-sibling::ul/li/a[@title='"+subMenuOption1+"']/following-sibling::ul/li/a[@title='"+subMenuOption2+"']"));
+		
+		moveToElement(driver, subMenu);
+		
+		subMenu.click();
+		Assert.assertEquals(subMenuOption2.toUpperCase(), categoryPageHeader.getText().trim());
+		//Assert.assertTrue(categoryPageHeader.getText().equalsIgnoreCase(subMenuOption2));
+		
+	}
+	
+	public void getTooltipTextforNavMenuonHomePage(String navMenuOption)
+	{
+		WebElement element=driver.findElement(By.xpath("//div[@id='block_top_menu']/ul/li/a[@title='"+navMenuOption+"']"));
+		Assert.assertEquals(navMenuOption, element.getAttribute("title"));
+		String tooltip=element.getAttribute("title");
+		System.out.println(tooltip);
+	}
+	
+	//Method to navigate through navigational menu from home page
+	/*public void subNavMenu(String navMenuOption, String SubNavOption)throws Exception
+	{
+		System.out.println(getTitle(driver));
+		WebElement element=driver.findElement(By.xpath("//div[@id='block_top_menu']/ul/li/a[@title='"+navMenuOption+"']"));
+		
+		WebElement subMenu=driver.findElement(By.xpath(".//*[@id='block_top_menu']/ul/li/a[@title='"+navMenuOption+"']/following-sibling::ul/li/a[@title='Tops']/following-sibling::ul/li/a[@title='"+SubNavOption+"']"));
+		moveToElement(driver,element);	
+		Thread.sleep(500);
+		subMenu.click();
+		Thread.sleep(500);
+		System.out.println(getTitle(driver));
+		
+	
+	}*/
 	}

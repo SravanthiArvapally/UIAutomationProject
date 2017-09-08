@@ -46,7 +46,7 @@ public class VerifyloginWithExistingUser extends TestBase{
 	@AfterClass
 	public void tear()
 	{
-		driver.quit();
+		closeBrowser();
 	}
 	
 

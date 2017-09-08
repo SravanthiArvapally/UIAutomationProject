@@ -1,53 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="22394" started-at="2017-09-02T10:29:33Z" finished-at="2017-09-02T10:29:55Z">
+  <suite name="Default suite" duration-ms="20135" started-at="2017-09-07T14:00:19Z" finished-at="2017-09-07T14:00:40Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="22394" started-at="2017-09-02T10:29:33Z" finished-at="2017-09-02T10:29:55Z">
-      <class name="com.test.automation.UIautomation.Homepage.VerifyloginWithExistingUser">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.test.automation.UIautomation.Homepage.VerifyloginWithExistingUser@1e397ed7]" name="setUp" is-config="true" duration-ms="8728" started-at="2017-09-02T15:59:33Z" finished-at="2017-09-02T15:59:41Z">
+    <test name="Default test" duration-ms="20135" started-at="2017-09-07T14:00:19Z" finished-at="2017-09-07T14:00:40Z">
+      <class name="com.test.automation.UIautomation.productPageTests.VerifyAddtoCartOnProductPage">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.test.automation.UIautomation.productPageTests.VerifyAddtoCartOnProductPage@31a5c39e]" name="setUp" is-config="true" duration-ms="9547" started-at="2017-09-07T19:30:19Z" finished-at="2017-09-07T19:30:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="loginWithExistingUser(java.lang.String, java.lang.String)[pri:0, instance:com.test.automation.UIautomation.Homepage.VerifyloginWithExistingUser@1e397ed7]" name="loginWithExistingUser" duration-ms="6319" started-at="2017-09-02T15:59:42Z" data-provider="login" finished-at="2017-09-02T15:59:48Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[tst12345@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[password1]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="verifyAddtoCart()[pri:0, instance:com.test.automation.UIautomation.productPageTests.VerifyAddtoCartOnProductPage@31a5c39e]" name="verifyAddtoCart" duration-ms="9960" started-at="2017-09-07T19:30:29Z" finished-at="2017-09-07T19:30:39Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginWithExistingUser -->
-        <test-method status="PASS" signature="loginWithExistingUser(java.lang.String, java.lang.String)[pri:0, instance:com.test.automation.UIautomation.Homepage.VerifyloginWithExistingUser@1e397ed7]" name="loginWithExistingUser" duration-ms="6139" started-at="2017-09-02T15:59:48Z" data-provider="login" finished-at="2017-09-02T15:59:54Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[tstt12345@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[password1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginWithExistingUser -->
-        <test-method status="PASS" signature="tear()[pri:0, instance:com.test.automation.UIautomation.Homepage.VerifyloginWithExistingUser@1e397ed7]" name="tear" is-config="true" duration-ms="622" started-at="2017-09-02T15:59:54Z" finished-at="2017-09-02T15:59:55Z">
+        </test-method> <!-- verifyAddtoCart -->
+        <test-method status="PASS" signature="tear()[pri:0, instance:com.test.automation.UIautomation.productPageTests.VerifyAddtoCartOnProductPage@31a5c39e]" name="tear" is-config="true" duration-ms="627" started-at="2017-09-07T19:30:39Z" finished-at="2017-09-07T19:30:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tear -->
-      </class> <!-- com.test.automation.UIautomation.Homepage.VerifyloginWithExistingUser -->
+      </class> <!-- com.test.automation.UIautomation.productPageTests.VerifyAddtoCartOnProductPage -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -9,11 +9,13 @@ import java.util.concurrent.TimeUnit;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
@@ -90,7 +92,8 @@ public class TestBase {
 	public void waitForElement(WebElement element,int timeOutInSeconds)
 	{
 		wait=new WebDriverWait(driver, timeOutInSeconds);
-		wait.until(ExpectedConditions.visibilityOf(element));
+		wait.until(ExpectedConditions.visibilityOf(element));//visibilityOfElementLocated((By) element));
+
 	}
 	
 	public void getScreenshot(String name)
@@ -117,10 +120,29 @@ public class TestBase {
 		{
 			e.printStackTrace();
 		}
-		
-		
-		
+			
 	}
-
-
-}
+	public void closeBrowser()
+	{
+		driver.quit();
+	}
+	
+	public void navigateBack()
+	{
+		driver.navigate().back();
+	}
+	
+	public void moveToElement(WebDriver driver,WebElement element)
+	{
+		
+		Actions action=new Actions(driver);
+	    action.moveToElement(element).build().perform();
+	}
+	
+	public String getTitle(WebDriver driver)
+	{
+		String title=driver.getTitle();
+		return title;
+	}
+	
+	}
